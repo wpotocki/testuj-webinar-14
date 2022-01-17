@@ -10,6 +10,8 @@ public class BaseTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/wojciechpotocki/Documents/szkolenia/testuj/bootcamp/driver/chromedriver");
         driver = new ChromeDriver();
+        // maksymalizacja okna
+        driver.manage().window().maximize();
     }
 
     @AfterClass
