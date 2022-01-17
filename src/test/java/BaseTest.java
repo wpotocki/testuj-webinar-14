@@ -3,6 +3,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 public class BaseTest {
     WebDriver driver;
 
@@ -12,6 +15,9 @@ public class BaseTest {
         driver = new ChromeDriver();
         // maksymalizacja okna
         driver.manage().window().maximize();
+        // driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // do selenium 3
+        // od selenium 4
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @AfterClass
