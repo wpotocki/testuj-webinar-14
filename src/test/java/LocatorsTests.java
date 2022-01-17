@@ -11,6 +11,28 @@ import java.time.Duration;
 public class LocatorsTests extends BaseTest {
 
     @Test
+    public void textExample() {
+        driver.get("http://sampleshop.inqa.pl/");
+
+        WebElement elementLink = driver.findElement(By.linkText("Kontakt z nami"));
+        WebElement elementPartial = driver.findElement(By.partialLinkText("Kontakt"));
+
+        WebElement fullXpathElement = driver.findElement(By.xpath("/html/body/main/footer/div[2]/div/div[1]/div[1]/div/div[2]/ul/li[6]/a"));
+        WebElement xpathElement = driver.findElement(By.xpath("//*[@id=\"link-static-page-contact-2\"]"));
+    }
+
+    @Test
+    public void classNameExample() {
+        driver.get("http://sampleshop.inqa.pl/");
+
+        WebElement element = driver.findElement(By.className("cart-products-count"));
+        WebElement element2 = driver.findElement(By.cssSelector(".blockcart .cart-preview .inactive"));
+        String actualCount = element.getText();
+
+        Assert.assertEquals(actualCount, "{0}");
+    }
+
+    @Test
     public void properCredentialsLoginTest() {
         driver.get("http://the-internet.herokuapp.com/login");
 
