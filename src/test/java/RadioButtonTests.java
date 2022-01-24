@@ -26,6 +26,8 @@ public class RadioButtonTests  extends BaseTest {
 
         femaleRadio.click();
         List<WebElement> selectedRadioButtons = driver.findElements(By.cssSelector("input[type=radio]:checked"));
+
         Assert.assertEquals(selectedRadioButtons.size(), 1);
+        Assert.assertEquals(selectedRadioButtons.get(0).getAttribute("value"), "female");
     }
 }
