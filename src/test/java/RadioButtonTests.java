@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.ScreenshotUtil;
 
 import java.time.Duration;
 import java.util.List;
@@ -13,6 +14,9 @@ public class RadioButtonTests  extends BaseTest {
     @Test
     public void thereAreThreeRadioButtonInFormTests() {
         driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
+
+        ScreenshotUtil.takeScreenshot(driver, "radio-button.jpg");
+
         List<WebElement> radioButtons = driver.findElements(By.name("gender"));
 
         Assert.assertEquals(radioButtons.size(), 3);
