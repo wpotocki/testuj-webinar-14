@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.Random;
 
 public class CssAttributesTests extends BaseTest {
     private static WebElement modalAd;

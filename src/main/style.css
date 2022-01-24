@@ -6,3 +6,7 @@ body {
     color: yellow;
     font-family: "Open Sans";
 }
+
+input:checked {
+
+}
